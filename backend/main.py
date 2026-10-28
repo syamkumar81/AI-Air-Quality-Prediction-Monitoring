@@ -95,7 +95,8 @@ app = FastAPI(
 # Configure CORS so existing Vite React frontend can communicate with backend
 origins = [
     "http://localhost:5173",
-    "http://127.0.0.1:5173"
+    "http://127.0.0.1:5173",
+    "https://ai-air-quality-prediction-monitorin.vercel.app"
 ]
 
 app.add_middleware(
