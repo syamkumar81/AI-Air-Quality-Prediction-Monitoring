@@ -1,0 +1,187 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Plus Jakarta Sans', Inter, system-ui, -apple-system, sans-serif;
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: #0B1724;
+    color: #F1F5F9;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom interactive dark card hover effects */
+.card-hover {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), 
+              border-color 0.25s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px -6px rgba(0, 0, 0, 0.6), 0 0 18px 1px rgba(54, 197, 240, 0.22);
+  border-color: rgba(54, 197, 240, 0.45);
+}
+
+/* Subtle modern dark scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0B1724;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1E3A5F;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #36C5F0;
+}
+
+/* Reusable Theme Surface Classes */
+.bg-navy-base {
+  background-color: #0B1724;
+}
+
+.bg-navy-surface {
+  background-color: #0F1F33;
+}
+
+.bg-navy-card {
+  background-color: #13253B;
+}
+
+.border-navy {
+  border-color: #1E3A5F;
+}
+
+.border-navy-subtle {
+  border-color: #162C48;
+}
+
+/* Gradients */
+.gradient-emerald-cyan {
+  background: linear-gradient(135deg, #0D9B76 0%, #36C5F0 100%);
+}
+
+.gradient-cyan-emerald {
+  background: linear-gradient(135deg, #36C5F0 0%, #0D9B76 100%);
+}
+
+.text-gradient-emerald-cyan {
+  background: linear-gradient(135deg, #0D9B76 0%, #36C5F0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Ambient glow utilities */
+.glow-emerald {
+  box-shadow: 0 0 25px -4px rgba(13, 155, 118, 0.45);
+}
+
+.glow-cyan {
+  box-shadow: 0 0 25px -4px rgba(54, 197, 240, 0.45);
+}
+
+.glow-mix {
+  box-shadow: 0 0 30px -5px rgba(54, 197, 240, 0.3), 0 0 25px -5px rgba(13, 155, 118, 0.35);
+}
+
+/* Soft breathing live glow */
+@keyframes breathing-glow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(13, 155, 118, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(13, 155, 118, 0.0);
+  }
+}
+
+.animate-glow-pulse {
+  animation: breathing-glow 2.8s infinite ease-in-out;
+}
+
+/* Soft cyan pulse */
+@keyframes cyan-glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(54, 197, 240, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(54, 197, 240, 0.0);
+  }
+}
+
+.animate-cyan-pulse {
+  animation: cyan-glow-pulse 2.8s infinite ease-in-out;
+}
+
+/* Floating leaf & cloud animations */
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(3deg);
+  }
+}
+
+.animate-float-slow {
+  animation: float-slow 6s ease-in-out infinite;
+}
+
+/* Pulsing radar effect */
+@keyframes radar-pulse {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.35);
+    opacity: 0.15;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0.9;
+  }
+}
+
+.animate-radar {
+  animation: radar-pulse 3s infinite ease-in-out;
+}
+
+/* Ambient hero glow pulse */
+@keyframes ambient-pulse {
+  0%, 100% {
+    opacity: 0.35;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.05);
+  }
+}
+
+.animate-ambient-pulse {
+  animation: ambient-pulse 5s infinite ease-in-out;
+}
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
