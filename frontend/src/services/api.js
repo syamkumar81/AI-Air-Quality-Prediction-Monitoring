@@ -6,7 +6,7 @@ import { CURRENT_MONITORING_DATA } from '../data/mockData';
 import { getAqiCategory } from '../utils/aqiUtils';
 
 const API_BASE_URL =
-  import.meta.env.VITE_API_BASE_URL || "http://127.0.0.1:8000";
+  import.meta.env.VITE_API_BASE_URL || "https://ai-air-quality-prediction-monitoring.onrender.com";
 
 export const API_CONFIG = {
   baseUrl: API_BASE_URL,
